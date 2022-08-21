@@ -4,20 +4,20 @@
 
 int Exponentiation(int number, int degree)
 {
-  int result = 1;
-  int index = 1;
-  while(index <= degree)
-  {
-    result = result * number;
-    index++;
-  }
-  return result;
+    int result = 1;
+    int index = 1;
+    while (index <= degree)
+    {
+        result = result * number;
+        index++;
+    }
+    return result;
 }
 
 
 void WriteExponentiation(int number, int degree)
 {
-  Console.WriteLine($"{number}, {degree} -> {Exponentiation(number, degree)}");
+    Console.WriteLine($"{number}, {degree} -> {Exponentiation(number, degree)}");
 }
 WriteExponentiation(3, 5);
 WriteExponentiation(2, 4);
@@ -30,16 +30,17 @@ WriteExponentiation(2, 4);
 int Sum(int num)
 
 {
- int result = 0;
- int len = num.ToString().Length;
-  
- for(int i = 0; i < len ; i++)
- {
-  result = result + num % 10;
-  num = num / 10;
- }
- 
- return result;
+    //  int result = 0;
+    //  int len = num.ToString().Length;
+
+    //  for(int i = 0; i < len ; i++)
+    //  {
+    //   result = result + num % 10;
+    //   num = num / 10;
+    // }
+    int result = 0;
+    for (; num > 0; num /= 10) result += num % 10;
+    return result;
 }
 
 void WriteSum(int num)
@@ -58,24 +59,23 @@ WriteSum(9012);
 
 int[] CreateArray(int num)
 {
-  int[] arr = new int[num];
-  
-  for(int i = 0; i < num; i++)
-  {
-    arr[i] = new Random().Next(1, 51);
-    
-  }
-  return arr;
+    int[] arr = new int[num];
+
+    for (int i = 0; i < num; i++)
+    {
+        arr[i] = new Random().Next(1, 51);
+    }
+    return arr;
 }
 
 void WriteArray(int[] arr)
 {
-  int len = arr.Length;
-  for(int j = 0; j < len; j++)
-  {
-  Console.Write($"{arr[j]}, ");
-  }
-  Console.WriteLine();
+    int len = arr.Length;
+    for (int j = 0; j < len; j++)
+    {
+        Console.Write($"{arr[j]}, ");
+    }
+    Console.WriteLine();
 }
 
 WriteArray(CreateArray(8));
