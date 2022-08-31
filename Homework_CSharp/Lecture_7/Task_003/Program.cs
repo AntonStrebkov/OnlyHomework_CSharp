@@ -37,6 +37,11 @@ void FindMiddle(int[,] array)
             sum[i] += array[j, i];
         }
     }
+    for (int i = 0; i < array.GetLength(1); i++)
+    {
+        System.Console.Write($"{sum[i]}\t");
+    }
+    System.Console.WriteLine();
     for (int k = 0; k < array.GetLength(1); k++)
     {
         double oneSumNum = Math.Round(sum[k] / array.GetLength(0), 2);
